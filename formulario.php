@@ -6,6 +6,7 @@ if(!empty($_POST['login']) && !empty($_POST['password'])){
 
     $login = htmlspecialchars($_POST['login']);
     $password = htmlspecialchars($_POST['password']);
+    $tema = htmlspecialchars($_POST['tema']);
 
   
   
@@ -14,12 +15,10 @@ if(!empty($_POST['login']) && !empty($_POST['password'])){
     }else{
         $mensagem = 'Falha ao efetuar login';
     }
+
+
    
-//    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-//     echo 'Foi enviado um formulario';
-//    }else{
-//     echo 'Não foi enviado nada';
-//    }
+
 }
 ?>
 
@@ -39,7 +38,7 @@ if(!empty($_POST['login']) && !empty($_POST['password'])){
     <title>Formulario</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="login.php" method="POST">
         <input type="text" name="login" placeholder="Digite seu nome" value="<?=$login ?? '' ?>">
           <input type="password" name="password" placeholder="Digite sua senha" value="<?=$password ?? '' ?>">
         <input type="submit" value="enviar">
@@ -49,12 +48,5 @@ if(!empty($_POST['login']) && !empty($_POST['password'])){
 </body>
 </html>
 
-    <?php
-    if(!empty($mensagem)){
-        echo $mensagem;
-    }
     
-    ?>
     
-</body>
-</html>
